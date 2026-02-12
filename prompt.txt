@@ -1,1 +1,10 @@
-Complete the implementation of round robin arbiter, use priority arbiter as submodule.
+Please Implement a scheduler that can grant permissions based on the round robin arbitration algorithm. 
+        There will be 1 requests coming each from 4 slave modules, one bit each in every 4 cycles. The scheduler should be able to grant permissions to the requests in round robin manner.
+
+        these are the inputs and outputs:
+        inputs:
+        - clk  : Clock signal (rising edge triggered)
+        - rst_n: Asynchronous reset_n signal
+        - req_i[3:0]: Request signal (indicates a request for permission)
+        outputs:
+        - gnt_o[3:0]: Grant signal (indicates a granted permission)
