@@ -22,13 +22,7 @@ module round_robin_arbiter (
 
   // Next mask based on the current grant
   assign nxt_mask = gnt_o[0] ?  4'b1110 : gnt_o[1] ? 4'b1100 : gnt_o[2] ? 4'b1000 :gnt_o[3] ? 4'b0000 : mask_q ;
-  /*always @ (*) begin
-    if (gnt_o[0]) nxt_mask = 4'b1110;
-    else if (gnt_o[1]) nxt_mask = 4'b1100;
-    else if (gnt_o[2]) nxt_mask = 4'b1000;
-    else if (gnt_o[3]) nxt_mask = 4'b0000;
-    else next_mask = mask_q ;
-  end*/
+
 
   // Generate the masked requests
   wire [3:0] mask_req;
